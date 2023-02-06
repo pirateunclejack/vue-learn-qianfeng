@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/vue2.js"></script>
+    <script src="../../lib/axios.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+
+    <style>
+        li {
+            overflow: hidden;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <navbar @myevent="handleEvent"></navbar>
+        <sidebar v-show="isShow"></sidebar>
+
+    </div>
+    <script>
+        Vue.component('sidebar', {
+            // get 'myname' attributes.
+            props: {
+
+            },
+            template: `<div style="background: yellow;" >
+                    <ul>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                        <li>111111111</li>
+                    </ul>
+                </div>`
+
+        })
+        Vue.component('navbar', {
+            template: `
+                <div style="background: red;">
+                    <button @click="handleClick()">Click</button>-Menu
+                </div>
+            `,
+            methods: {
+                handleClick() {
+                    // console.log("son to father, tell isShow=!isShow")
+                    this.$emit("myevent", 11111)
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                isShow: false,
+            },
+            methods: {
+                handleEvent(data) {
+                    // console.log('father ')
+                    this.isShow = !this.isShow
+                    console.log(data)
+                }
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

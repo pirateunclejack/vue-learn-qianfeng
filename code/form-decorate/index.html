@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model.lazy="mytext">
+        {{mytext}}
+        <input type="number" v-model.number="myage">
+        <input type="text" v-model.trim="myusername">
+    </div>
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: '',
+                    myage: 0,
+                    myusername: '',
+                }
+            },
+            methods: {
+                handleUlClick() {
+                    console.log('ul')
+                },
+                handleLiClick(evt) {
+                    console.log('li')
+                    // evt.stopPropagation();
+
+                },
+
+                handleAdd1(evt, a, b, c) {
+                    this.count++
+                    console.log(evt.target, a, b, c)
+                },
+                handleAdd2(evt) {
+                    this.count++
+                    console.log(evt)
+                },
+                handleInput(evt) {
+                    console.log('input', evt.target.value)
+                },
+                handleKeyup(evt) {
+                    console.log(evt.keyCode, 'keyup')
+                    if (evt.keyCode === 13) {
+                        console.log('li add ', evt.target.value)
+                    }
+                }
+            }
+        }
+        v = Vue.createApp(obj).mount('#box')
+
+    </script>
+</body>
+
+</html>

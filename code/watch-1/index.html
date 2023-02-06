@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext">
+
+        <ul>
+            <li v-for="data in datalist" :key="data">
+                {{ data }}
+            </li>
+        </ul>
+    </div>
+    <script>
+
+
+        var obj = {
+            data() {
+                return {
+                    mytext: '',
+                    datalist: ['111', '222', '333', '444', '555'],
+                    originList: ['111', '222', '333', '444', '555'],
+
+                }
+
+            },
+            watch: {
+                mytext(newval,) {
+                    // console.log('Changed')
+                    setTimeout(() => {
+                        this.datalist = this.originList.filter(item => item.includes(newval))
+                    }, 1000)
+                },
+
+            },
+            computed: {
+                // computedList() {
+                //     return this.datalist.filter(item => item.includes(this.mytext))
+                // }
+            },
+            methods: {
+
+            }
+
+        }
+        Vue.createApp(obj).mount('#box')
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        {{mytext}}
+        <textarea name="" id="" cols="30" rows="10" v-model="mytext"></textarea>
+        <div>
+            <div>Username: <input type="text" v-model="mytext"></div>
+            <input type="checkbox" v-model="isRemember">Remember
+            <br>
+            <button v-on:click="handleLogin">Login</button>
+        </div>
+
+        <div>
+            <h2>Submit Hobby</h2>
+            <input type="checkbox" v-model="checkList" value="vue">vue
+            <input type="checkbox" v-model="checkList" value="react">react
+            <input type="checkbox" v-model="checkList" value="wx">little application
+        </div>
+        {{checkList}}
+
+        <div>
+            <h2>sex chose</h2>
+            <input type="radio" v-model="select" value="a">male
+            <input type="radio" v-model="select" value="b">female
+        </div>
+    </div>
+
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: localStorage.getItem('username'),
+                    isRemember: false,
+                    checkList: [],
+                    select: '',
+                }
+            },
+            methods: {
+                handleLogin() {
+                    if (this.isRemember) {
+                        localStorage.setItem('username', this.mytext)
+                    }
+                    console.log(this.isRemember, this.checkList, this.select)
+                }
+
+            }
+        }
+        v = Vue.createApp(obj).mount('#box')
+
+    </script>
+</body>
+
+</html>

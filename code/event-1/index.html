@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        {{count}}
+        <button v-on:click="handleAdd1($event,1,2,3)">Add-1</button>
+        <button v-on:click="handleAdd2">Add-2</button>
+        <button v-on:click="count++">Add-3</button>
+        <input type="text" v-on:input="handleInput">
+
+        <ul @click.self="handleUlClick">
+            <li v-on:click.stop="handleLiClick">1111</li>
+            <li v-on:click.stop="handleLiClick">2222</li>
+            <li v-on:click.stop="handleLiClick">3333</li>
+            <li v-on:click.once="handleLiClick">4444</li>
+        </ul>
+        <a href="https://www.baidu.com" @click.prevent>Baidu</a>
+
+        <input type="text" @keyup="handleKeyup">
+        <!-- @keyup.enter .ctrl .esc  .up .down .left .right .space .ctrl .shift .delete -->
+
+    </div>
+    <script>
+        var obj = {
+            data() {
+                return {
+                    count: 1
+                }
+            },
+            methods: {
+                handleUlClick() {
+                    console.log('ul')
+                },
+                handleLiClick(evt) {
+                    console.log('li')
+                    // evt.stopPropagation();
+
+                },
+
+                handleAdd1(evt, a, b, c) {
+                    this.count++
+                    console.log(evt.target, a, b, c)
+                },
+                handleAdd2(evt) {
+                    this.count++
+                    console.log(evt)
+                },
+                handleInput(evt) {
+                    console.log('input', evt.target.value)
+                },
+                handleKeyup(evt) {
+                    console.log(evt.keyCode, 'keyup')
+                    if (evt.keyCode === 13) {
+                        console.log('li add ', evt.target.value)
+                    }
+                }
+            }
+        }
+        v = Vue.createApp(obj).mount('#box')
+
+    </script>
+</body>
+
+</html>

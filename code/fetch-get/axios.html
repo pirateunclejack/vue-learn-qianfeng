@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <style>
+        li {
+            overflow: hidden;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleFetch">ajax-fetch</button>
+        <ul>
+            <li v-for="data in datalist" :key="data.filmId">
+                <img :src="data.poster" alt="">
+                {{data.name}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var obj = {
+            data() {
+                return {
+                    mytext: localStorage.getItem('username'),
+                    isRemember: false,
+                    checkList: [],
+                    select: '',
+                    datalist: []
+                }
+            },
+            methods: {
+                handleFetch() {
+                    axios.get('./maizuo.json').then(res => {
+                        // console.log(res.data.data.films)
+                        this.datalist = res.data.data.films
+                    })
+
+                    // axios.post("******", "name=kerwin&age=100")
+                    // axios.post("******", { name: "kerwin", age: 100 })
+
+                    // fetch('**',{
+                    //     method: 'post',
+                    //     headers: {
+                    //         "Content-Type":"application/x-www-form-urlencoded"
+                    //     },
+                    //     body:"name=kerwin&age=100",
+                    // }).then(res => {
+                    //         return res.json()
+                    //     })
+                    //     .then(res => {
+                    //         console.log(res)
+                    //     })
+                    //     .catch(err => {
+                    //         console.log(err)
+                    //     })
+
+                    // fetch('**', {
+                    //     method: 'post',
+                    //     headers: {
+                    //         "Content-Type": "application/json"
+                    //     },
+                    //     body: JSON.stringify({
+                    //         name: "kerwin",
+                    //         age: 100
+                    //     }),
+                    // }).then(res => {
+                    //     return res.json()
+                    // })
+                    //     .then(res => {
+                    //         console.log(res)
+                    //     })
+                    //     .catch(err => {
+                    //         console.log(err)
+                    //     })
+                }
+
+            }
+        }
+        v = Vue.createApp(obj).mount('#box')
+
+    </script>
+</body>
+
+</html>

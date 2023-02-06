@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <!-- <div v-if="isCreated">1111</div> -->
+        <!-- <div v-else>2222</div> -->
+        <!-- <div v-if="!isCreated">2222</div> -->
+        <h2>All order</h2>
+        <ul>
+            <li v-for="item in datalist" v-bind:key="item.id">
+                {{item.title}}==
+                <span v-if="item.state===0">Not paied</span>
+                <span v-else-if="item.state===1">Paied</span>
+                <span v-else-if="item.state===2">Send already</span>
+                <span v-lese>Not paied</span>
+            </li>
+        </ul>
+        <template v-if="isCreated">
+            <div>11111</div>
+            <div>22222</div>
+            <div>33333</div>
+        </template>
+    </div>
+    <script>
+
+
+        var obj = {
+            data() {
+                return {
+                    isCreated: true,
+                    datalist: [
+                        {
+                            id: 1,
+                            title: '1111',
+                            state: 0
+                        },
+                        {
+                            id: 2,
+                            title: '222',
+                            state: 1
+                        },
+                        {
+                            id: 3,
+                            title: '333',
+                            state: 2
+                        },
+                    ]
+                    //     myname: 'kerwin',
+                    //     mytext: 'mytextfwefwee',
+                    //     classobj: {
+                    //         aa: true,
+                    //         bb: true,
+                    //         cc: true
+                    //     }
+                    // }
+                }
+
+
+
+            },
+            // methods: {
+            //     handleAdd() {
+            //         console.log('Add', this.mytext)
+            //         this.classobj.dd = true
+            //     }
+            methods: {
+
+            }
+        }
+        Vue.createApp(obj).mount('#box')
+    </script>
+</body>
+
+</html>

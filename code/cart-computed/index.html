@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        li {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        li img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="checkbox" v-model="isAllChecked" @change="handleAllChecked">Select All/None
+        <ul>
+            <li v-for="(item,index) in datalist" :key="item.id">
+                <input type="checkbox" v-model="checkList" :value="item" @change="handleItemChecked">
+                <img :src="item.pic" alt="">
+                <div>
+                    <div>{{item.name}}</div>
+                    <div style="color: red">$ {{item.price}}</div>
+                </div>
+                <div>
+                    <button @click="item.number--" :disabled="item.number===1">-</button>
+                    <span>{{item.number}}</span>
+                    <button @click="item.number++" :disabled="item.number===item.limit">+</button>
+                </div>
+                <div>
+                    <button @click="handleDeleteClick(index,item.id)">Delete</button>
+                </div>
+            </li>
+        </ul>
+        <div>Total money: {{computedSum}}</div>
+        {{checkList}}
+    </div>
+    <script>
+        var obj = {
+            data() {
+                return {
+                    checkList: [],
+                    isAllChecked: false,
+                    datalist: [
+                        {
+                            name: 'commodity1',
+                            price: 10,
+                            number: 1,
+                            id: 1,
+                            limit: 5,
+                            pic: "../../img/docker.png"
+                        },
+                        {
+                            name: 'commodity2',
+                            price: 20,
+                            number: 2,
+                            id: 2,
+                            limit: 10,
+                            pic: "../../img/docker.png"
+                        },
+                        {
+                            name: 'commodity3',
+                            price: 30,
+                            number: 3,
+                            id: 3,
+                            limit: 15,
+                            pic: "../../img/docker.png"
+                        }
+                    ]
+                }
+            },
+            computed: {
+                computedSum() {
+                    var total = 0
+                    this.checkList.forEach(item => {
+                        total += item.price * item.number
+                    })
+                    return total
+                }
+            },
+            methods: {
+                handleDeleteClick(index, id) {
+                    this.datalist.splice(index, 1)
+                    // delete checklist
+                    // console.log(id)
+                    this.checkList = this.checkList.filter(item => item.id !== id)
+                    this.handleItemChecked()
+                },
+                handleAllChecked() {
+                    // console.log(this.isAllChecked)
+                    if (this.isAllChecked) {
+                        this.checkList = this.datalist
+                    } else {
+                        this.checkList = []
+                    }
+                },
+                handleItemChecked() {
+                    if (this.checkList.length === this.datalist.length) {
+                        this.isAllChecked = true
+                    } else {
+                        this.isAllChecked = false
+                    }
+
+                }
+
+            }
+        }
+        v = Vue.createApp(obj).mount('#box')
+
+    </script>
+</body>
+
+</html>

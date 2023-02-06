@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        {{myname}}-{{myage}}
+        <!-- vi-bind -->
+        <div v-bind:class="whichcolor">Change backgroud color</div>
+        <div :class="isColor?'red':'yellow'">Change backgroud color</div>
+        <img :src="imgpath" alt="">
+        <button @click="handleChange()">change</button>
+        <button v-on:click="handleChange()">change</button>
+
+        <!-- v-show v-if command -->
+        <div v-show="isShow">if show</div>
+        <div v-if="isCreated">if created</div>
+        <!-- v-for -->
+        <ul>
+            <li v-for='(item, index) in list'>{{item}}- {{index}}</li>
+        </ul>
+
+        {{mytext}}
+        <div v-html='mytext'>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                mytext: '<b>B</b>',
+                myname: 'Kerwin',
+                myage: '21',
+                whichcolor: 'red',
+                isColor: true,
+                isShow: false,
+                isCreated: false,
+                imgpath: null,
+                list: ['aaa', 'bbb', 'ccc']
+            },
+            methods: {
+                handleChange() {
+                    // console.log('handlechange')
+                    this.myname = 'tiechui'
+                    this.myage = 18
+                    console.log(this)
+                    this.whichcolor = 'yellow'
+                    // this.isColor = false
+                    this.isColor = !this.isColor
+                    this.imgpath = '../../img/docker.png'
+                    this.isShow = !this.isShow
+                    this.isCreated = !this.isCreated
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

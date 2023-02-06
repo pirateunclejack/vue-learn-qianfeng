@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <div v-bind:class="classobj">dynamic switch obj</div>
+        <div v-bind:class="classarr">dynamic switch arr</div>
+        <div v-bind:style="styleobj">dynamic switch style obj</div>
+        <div v-bind:style="stylearr">dynamic switch style arr</div>
+        <input type="text" v-model="mytext">
+        <button v-on:click="handleAdd()">add</button>
+        <div v-bind:class="classobj">dynamic class switch obj</div>
+        {{20+20}}
+        {{myname}}
+    </div>
+    <script>
+        // var vm = new Vue({
+        //     el: '#box',
+        //     data: {
+        //         classobj: {
+        //             aa: false,
+        //             bb: true,
+        //             cc: false,
+        //         },
+        //         classarr: ['aa', 'bb'],
+        //         styleobj: {
+        //             backgroundColor: 'red',
+        //         },
+        //         stylearr: [{ fontSize: '100px' }]
+        //     }
+        // })
+
+        var obj = {
+            data() {
+                return {
+                    myname: 'kerwin',
+                    mytext: 'mytextfwefwee',
+                    classobj: {
+                        aa: true,
+                        bb: true,
+                        cc: true
+                    }
+                }
+            },
+            methods: {
+                handleAdd() {
+                    console.log('Add', this.mytext)
+                    this.classobj.dd = true
+                }
+            }
+        }
+        Vue.createApp(obj).mount('#box')
+    </script>
+</body>
+
+</html>

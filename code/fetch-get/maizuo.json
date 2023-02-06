@@ -1,0 +1,467 @@
+{
+  "status": 0,
+  "data": {
+    "films": [
+      {
+        "filmId": 6165,
+        "name": "阿凡达：水之道",
+        "poster": "https://pic.maizuo.com/usr/movie/fceeb41a1660d097d02fbcbda3191d8f.jpg",
+        "actors": [
+          {
+            "name": "詹姆斯·卡梅隆",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/4da6b697aabe63657edd65aa1b660a04.jpg"
+          },
+          {
+            "name": "萨姆·沃辛顿",
+            "role": "杰克·萨利 Jake Sully",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/c0802754994c52632632fa14a9d8b2c6.jpg"
+          },
+          {
+            "name": "佐伊·索尔达娜",
+            "role": "奈蒂莉 Neytiri",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/49c7212edfcbec66dd57f03f8b290bcc.jpg"
+          },
+          {
+            "name": "西格妮·韦弗",
+            "role": "格蕾丝·奥格斯汀 Dr. Grace Augustin",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/c46f06dd60095aa9c5eb60492ae5fe3d.jpg"
+          },
+          {
+            "name": "史蒂芬·朗",
+            "role": "迈尔斯·夸奇上校 Miles Quaritch",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e3ce341c0166a7a7762f111bac80e161.jpg"
+          }
+        ],
+        "director": "詹姆斯·卡梅隆",
+        "category": "动作|冒险|科幻",
+        "synopsis": "《阿凡达：水之道》的剧情承接自第一部的5年之后。曾经的地球残疾军人杰克·萨利，如今已经是潘多拉星球纳美族一方部族的族长，并且与爱妻娜塔莉共同育有一对可爱的儿女，日子过得平淡而充实。然而某天，有个部族的兄弟在海岸附近巡逻时遭到利器割喉身亡。通过现场勘查，以及作为前海军陆战队员的敏锐直觉，杰克判断已经有人类的阿凡达混入了部落……",
+        "filmType": { "name": "3D", "value": 2 },
+        "nation": "美国",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1671148800,
+        "timeType": 3,
+        "runtime": 190,
+        "grade": "7.4",
+        "item": { "name": "3D", "type": 2 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6179,
+        "name": "绝望主夫",
+        "poster": "https://pic.maizuo.com/usr/movie/495ff91096e9de224acc3746ec42d002.jpg",
+        "actors": [
+          {
+            "name": "张琦",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/6a74150ccda394799bea5762f100a458.jpg"
+          },
+          {
+            "name": "常远",
+            "role": "胡铁男",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/7473171dfa35d0fba57818ee1d43f22a.jpg"
+          },
+          {
+            "name": "李嘉琦",
+            "role": "许薇薇",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/b2df379bfff0428e317cd646f312c379.jpg"
+          },
+          {
+            "name": "王成思",
+            "role": "高达",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/12750796f68ae3b06141547ff788627f.jpg"
+          },
+          {
+            "name": "郭祥鹏",
+            "role": "王富球",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/7560bab5eaef8e60ecfc333a49c082d8.jpg"
+          }
+        ],
+        "director": "张琦",
+        "category": "喜剧",
+        "synopsis": "常远领衔跨年喜剧笑闹来袭！魏翔、李嘉琦、王成思、郭祥鹏、李诚儒、王智等全员喜剧人强势集结！因一场电梯意外，钢铁直男胡铁男（常远 饰）意外进入一个“错位”世界，昔日成功学大师胡铁男变身“全职家庭主夫”，老酒友聚会变成下午茶比美大会，层出不穷的反差让胡铁男着实无法忍受。面对颠倒错乱的世界，胡铁男在“鸡飞狗跳”的生活中体验了真正的“换位”，终于从对妻子的忽视逐渐变成感同身受，终于明白了妻子的默默付出与不易，明白了“爱”的真义……温馨提示：请务必在女性陪同下观看！",
+        "filmType": { "name": "4D", "value": 13 },
+        "nation": "中国大陆",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1672444800,
+        "timeType": 3,
+        "runtime": 91,
+        "grade": "7.6",
+        "item": { "name": "4D", "type": 13 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6181,
+        "name": "想见你",
+        "poster": "https://pic.maizuo.com/usr/movie/2293397ca6af52abff61a42601d25d81.jpg",
+        "actors": [
+          {
+            "name": "黄天仁",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/2b648f945b70b08beea47c7c93e3cfec.jpg"
+          },
+          {
+            "name": "柯佳嬿",
+            "role": "黄雨萱",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/14a50fe15752d76bf487fcfa5991a449.jpg"
+          },
+          {
+            "name": "许光汉",
+            "role": "李子维",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/f6633c0219e04e20d911048a268a0fad.jpg"
+          },
+          {
+            "name": "施柏宇",
+            "role": "莫俊杰",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/4339e43bd90d0be789399d5a6bfbec77.jpg"
+          },
+          {
+            "name": "金世佳",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e0da655d0a5f59b5728465e1609aaf51.jpg"
+          }
+        ],
+        "director": "黄天仁",
+        "category": "爱情|悬疑|奇幻",
+        "synopsis": "按下随身听的播放键，全新的故事在熟悉又陌生的恋人间展开…… 当李子维出现的那一刻，黄雨萱终于意识到，梦中经常见到的那个人，此刻就站在眼前。因为一个“想见你”的冲动，注定相爱的恋人们开启了命运牵绊。爱让一切有了曲折，也有了力量。",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "中国大陆,中国台湾",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1671840000,
+        "timeType": 3,
+        "runtime": 107,
+        "grade": "7.6",
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6185,
+        "name": "龙珠超：超级人造人",
+        "poster": "https://pic.maizuo.com/usr/movie/54d1beca3e50ad912ac9c2e504b4eb92.jpg",
+        "actors": [
+          {
+            "name": "儿玉彻郎",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e87fa905e6c139f625faf8481d3a83a6.jpeg"
+          },
+          {
+            "name": "野泽雅子",
+            "role": "孙悟空/孙悟饭/孙悟天",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/46509d7a7d4d6caaf66f96aaab980a71.jpg"
+          },
+          {
+            "name": "古川登志夫",
+            "role": "比克",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/977ea9db61e6c3682adedc25d24cf67c.jpg"
+          },
+          {
+            "name": "久川绫",
+            "role": "布尔玛",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/55fd2d4603ae7e82ab7b391cdd31fe70.jpg"
+          },
+          {
+            "name": "堀川亮",
+            "role": "贝吉塔",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/0407a8d1a19bc9e844cb0dab44a2baf9.jpg"
+          }
+        ],
+        "director": "儿玉彻郎",
+        "category": "动画|动作|冒险",
+        "synopsis": "《龙珠》原作者鸟山明操刀编剧，讲述了曾经被孙悟空击败的红绸军卷土重来，创造出了自称是超级英雄的人造人伽玛1号和伽玛2号。悟饭、比克与两位超级人造人狭路相逢，展开了激烈的对战……红绸军究竟在酝酿什么阴谋？地球危机迫在眉睫，是时候觉醒了，真正的“超级英雄”！",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "日本",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1672963200,
+        "timeType": 3,
+        "runtime": 100,
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6178,
+        "name": "穿靴子的猫2",
+        "poster": "https://pic.maizuo.com/usr/movie/6982928ce7293b45f46d34a24115cb33.jpg",
+        "actors": [
+          {
+            "name": "乔尔·克劳福德",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/201d0f60b7a8798327b2900d7d2cef74.jpg"
+          },
+          {
+            "name": "安东尼奥·班德拉斯",
+            "role": "Puss in Boots",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/c6db7a6dccebce593b717c1fc2e032d5.jpg"
+          },
+          {
+            "name": "萨尔玛·海耶克",
+            "role": "Kitty Softpaws",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/4b2724712ce5eafde1413ad23bac6b20.jpg"
+          },
+          {
+            "name": "哈维·吉兰",
+            "role": "Perro",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/b7318669a7232727f2e0c7f242fbbe22.jpg"
+          },
+          {
+            "name": "弗洛伦斯·皮尤",
+            "role": "Goldilocks",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e1b89ecf8c5971e1da1d9b195d45cf1f.jpg"
+          }
+        ],
+        "director": "乔尔·克劳福德",
+        "category": "动画|奇幻|家庭",
+        "synopsis": "喵！谁能拒绝喵星人毛茸茸的陪伴？橘猫顶流即将强势回归，为你带来抵御寒风的温暖能量。这次，传奇大侠靴猫将和老搭档新队友并肩开启怎样的全新冒险之旅呢？在不知不觉中挥霍掉了自己九条命中的八条的他为了找回失去的生命，即将踏上一段史诗般的旅程——进入黑森林寻找神话中的许愿星，许下“最后的愿望”。这次穿靴子的猫和老搭档兼“宿敌”软爪妞，还有新队友小狗佩罗将组成“友谊铁三角”，新老朋友齐聚首，全新高能冒险即将开启。作为《怪物史瑞克》世界中的一段全新冒险，《穿靴子的猫2》将有更丰满的故事与更扣人心弦的情节。特别是小狗佩罗、金发姑娘和三只熊犯罪家族等新角色的加入，将带来更多暖心治愈的元素。梦工场动画巨制，即将全球献映。",
+        "filmType": { "name": "3D", "value": 2 },
+        "nation": "美国",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1671753600,
+        "timeType": 3,
+        "runtime": 102,
+        "grade": "7.8",
+        "item": { "name": "3D", "type": 2 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6166,
+        "name": "航海王：红发歌姬",
+        "poster": "https://pic.maizuo.com/usr/movie/1f25dd6943762288dfd84b961c98f478.jpg",
+        "actors": [
+          {
+            "name": "谷口悟朗",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/cefebea295b04125d764edc63d66fbab.jpeg"
+          },
+          {
+            "name": "田中真弓",
+            "role": "蒙奇·D·路飞",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/4f6aa3e40948c476b5dd27923d966e66.jpg"
+          },
+          {
+            "name": "中井和哉",
+            "role": "罗罗诺亚·索",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/d727837a1a65cf02d1734674f86a1051.jpg"
+          },
+          {
+            "name": "冈村明美",
+            "role": "奈美",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/1d2c7e8ee9d9b526e3a613ed8353da32.jpg"
+          },
+          {
+            "name": "山口胜平",
+            "role": "撒谎布",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/71dc2711ab2417422de03bb14423760a.jpg"
+          }
+        ],
+        "director": "谷口悟朗",
+        "category": "动画",
+        "synopsis": "令全世界为之疯狂的歌姬·乌塔，她的身世成谜，歌声却被誉为“来自别的次元”。而这次，她将举办演唱会并第一次露出庐山真面目。为了欣赏她的歌声，路飞率领的草帽一伙，以及世界各地的歌迷都汇聚在会场之中。全世界备受瞩目的歌声即将在此回荡。而故事就在乌塔是“杰克斯的女儿”这一令人震惊的发现中拉开帷幕！",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "日本",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1669852800,
+        "timeType": 3,
+        "runtime": 115,
+        "grade": "7.5",
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6150,
+        "name": "名侦探柯南：万圣节的新娘",
+        "poster": "https://pic.maizuo.com/usr/movie/2da2cc429af2610a0006d066db8384a3.jpg",
+        "actors": [
+          {
+            "name": "高山南",
+            "role": "江户川柯南",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/ef58c1fa37cef5adc1f297f693c29938.jpg"
+          },
+          {
+            "name": "山崎和佳奈",
+            "role": "毛利兰",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e06ed1218db91f5ca9b1c8ab014d70e4.jpg"
+          },
+          {
+            "name": "小山力也",
+            "role": "毛利小五郎",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/b5cb1cf254796dfb7e8f92c4a39aa795.jpg"
+          },
+          {
+            "name": "三木真一郎",
+            "role": "萩原研二",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/8f15fad59edff247edef7f753e702b40.jpg"
+          },
+          {
+            "name": "古谷彻",
+            "role": "安室透 / 降谷零",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/9628758015b7686a111463b490a68e41.jpg"
+          }
+        ],
+        "director": "满仲劝",
+        "category": "动作|动画|悬疑",
+        "synopsis": "涩谷的万圣节狂欢庆典竟然变成了一场可怕的灾难！柯南和安室透深陷危机，佐藤刑警和高木刑警的婚礼现场惊现炸弹客！一桩关于三年前警校五人组的迷案即将揭开…",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "日本",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1668729600,
+        "timeType": 3,
+        "runtime": 110,
+        "grade": "7.6",
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6177,
+        "name": "女生规则",
+        "poster": "https://pic.maizuo.com/usr/movie/d2084fcc1f3a54f3c3359203286d7a5a.jpg",
+        "actors": [
+          {
+            "name": "阿尼鲁德·罗伊·乔杜里",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/d4b273957ef0625f239c05738e27e0dc.jpg"
+          },
+          {
+            "name": "阿米达普·巴强",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/899263a2af349efda5f1577c880b883f.jpg"
+          },
+          {
+            "name": "安德莉亚·塔林",
+            "role": "Andrea",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/8100c7e1108298f132032a3839a621a1.jpg"
+          },
+          {
+            "name": "安什·拉索尔",
+            "role": "Vik",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/7b9414e9fc30dab51b1ddb1b3ddd4428.jpg"
+          },
+          {
+            "name": "基尔蒂·库哈里",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e276ca9ebec553da9f5d72a988b11965.jpg"
+          }
+        ],
+        "director": "阿尼鲁德·罗伊·乔杜里",
+        "category": "剧情|惊悚",
+        "synopsis": "一场聚会上，一名女生为了拒绝男生的侵犯而失手砸伤男生，随后她与同伴不断受到男方的威胁和骚扰，并被男方以“故意伤害罪”告上法庭，一场黑白颠倒的诉讼就此展开。在这场黑白颠倒的诉讼中，几位女生该如何走出“规则”的困局？",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "印度",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1672963200,
+        "timeType": 3,
+        "runtime": 136,
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6184,
+        "name": "西游记之七十二变",
+        "poster": "https://pic.maizuo.com/usr/movie/c47385d54d04479163962b213bf2cb44.jpg",
+        "actors": [
+          {
+            "name": "覃劼",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/9a330e796463cef4401fb1bbeefede0b.jpg"
+          },
+          {
+            "name": "刘婧荦",
+            "role": "孙悟空",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/b0957c9524705fd6f73b5145ec2d0752.jpg"
+          },
+          {
+            "name": "刘琮",
+            "role": "牛魔王",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e4006a95d13f818e7c3a9a9f82e4ebdc.jpg"
+          },
+          {
+            "name": "图特哈蒙",
+            "role": "混世魔王",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/c52904309dc2256cf22917a36fdb3cc4.jpg"
+          },
+          {
+            "name": "林帽帽",
+            "role": "狮驼王",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/be90c67944fa231a65d141c7d435f56c.jpg"
+          }
+        ],
+        "director": "覃劼",
+        "category": "动作|动画|奇幻",
+        "synopsis": "亲子动画欢乐贺岁，带孩子就看孙悟空！孙悟空为了拯救终年无雨的花果山，孤身前往只招收神仙学员的仙法学院——三星洞，拜师菩提老祖学习那驱雷掣电、天马行空、变幻无穷的七十二变的神仙仙术。求学期间孙悟空除了交到一群肝胆相照的好友外，还发生了很多欢乐有趣、啼笑皆非的故事。然而此时，东海龙王正在暗中研制药物，通过控制傀儡的意识使之成为无情的杀手，向天庭复仇。孙悟空与他的同学们发现了龙王的阴谋，齐心协力试图阻止这场将会殃及苍生的争斗，与东海龙王展开了上天入海、横跨仙人两界的终极大战。孙悟空也在此次大战中完成了成长与蜕变，领悟了七十二变的真义。",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "中国大陆",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1672358400,
+        "timeType": 3,
+        "runtime": 90,
+        "grade": "7",
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      },
+      {
+        "filmId": 6183,
+        "name": "唬胆特工",
+        "poster": "https://pic.maizuo.com/usr/movie/d0fd32acd59df075978762cabb12e8be.jpg",
+        "actors": [
+          {
+            "name": "帕特里克·休斯",
+            "role": "导演",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e4b7f0bdb55fc7e6ff622eba1503a84e.jpg"
+          },
+          {
+            "name": "凯文·哈特",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/e08123ae2f4b1ddd8373c6ed0d0dc300.jpg"
+          },
+          {
+            "name": "伍迪·哈里森",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/5472b067a444c7375ccf6494e9a974ae.jpg"
+          },
+          {
+            "name": "凯莉·库柯",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/1e0822cef7fdbce5608dd99ae138beab.jpg"
+          },
+          {
+            "name": "山下智久",
+            "role": "演员",
+            "avatarAddress": "https://pic.maizuo.com/usr/movie/dd11220d04075985116ec5d4dd6f9237.jpg"
+          }
+        ],
+        "director": "帕特里克·休斯",
+        "category": "动作|喜剧|犯罪",
+        "synopsis": "好莱坞爆笑动作爽片《唬胆特工》由喜剧演员凯文·哈特联手实力男星伍迪·哈里森出演，《王牌保镖》导演帕特里克·休斯执导。嘴强废柴泰迪最擅长的事情就是搞砸一切，他想要给妻子制造生日惊喜，却阴差阳错误入黑帮犯罪现场，被当成了让人闻风丧胆的冷面杀手“多伦多来的男人”。为了活命，泰迪无奈将错就错，假扮杀手执行任务。而真正的冷面杀手只能和泰迪临时组队，开启狐假虎威、啼笑皆非的任务模式。两人笑料百出，危险重重的亡命囧途就此开始。",
+        "filmType": { "name": "2D", "value": 1 },
+        "nation": "美国",
+        "language": "",
+        "videoId": "",
+        "premiereAt": 1671753600,
+        "timeType": 3,
+        "runtime": 110,
+        "grade": "7.3",
+        "item": { "name": "2D", "type": 1 },
+        "isPresale": true,
+        "isSale": false
+      }
+    ],
+    "total": 22
+  },
+  "msg": "ok"
+}
