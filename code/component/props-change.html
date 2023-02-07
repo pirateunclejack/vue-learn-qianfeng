@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/vue2.js"></script>
+  <script src="../../lib/axios.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div v-once>
+      {{title}}
+    </div>
+    <child :mytitle="title"></child>
+  </div>
+  <script>
+    Vue.component('child', {
+      props: ['mytitle'],
+      template: `
+        <div >
+          child={{mytitle}}
+          <button @click='handleClick'>click</button>
+        </div>
+      `,
+      methods: {
+        handleClick() {
+          this.mytitle = '1111111111111111111'
+        }
+      }
+    })
+    var vm = new Vue({
+      el: '#box',
+      data: {
+        title: 'jjdofjiwoeifji'
+      }
+    })
+  </script>
+</body>
+
+</html>
