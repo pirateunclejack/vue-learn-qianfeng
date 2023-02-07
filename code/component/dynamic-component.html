@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/vue2.js"></script>
+  <script src="../../lib/axios.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <!-- <home v-show=" which === 'home'"></home> -->
+    <!-- <list v-show=" which === 'list'"></list> -->
+    <!-- <shopcar v-show=" which === 'shopcar'"></shopcar> -->
+    <keep-alive>
+      <component :is="which"></component>
+    </keep-alive>
+    <footer>
+      <ul>
+        <li @click="which='home'">
+          Home
+        </li>
+        <li @click="which='list'">
+          List
+        </li>
+        <li @click="which='shopcar'">
+          Shopcar
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    Vue.component('home', {
+      template: `
+        <div >
+          <input type="text" name="" id="">
+
+          home
+        </div>
+      `
+    })
+    Vue.component('list', {
+      template: `
+        <div >
+          list
+    <home v-show=" which === 'home'"></home>
+        </div>
+      `
+    })
+    Vue.component('shopcar', {
+      template: `
+        <div >
+          shopcar
+        </div>
+      `
+    })
+
+    var vm = new Vue({
+      el: '#box',
+      data: {
+        which: 'home'
+      }
+    })
+  </script>
+</body>
+
+</html>
