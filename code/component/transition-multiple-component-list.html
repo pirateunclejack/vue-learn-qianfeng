@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <style>
+    .kerwin-enter-active {
+      animation: aaa 1.5s;
+    }
+
+    .kerwin-leave-active {
+      animation: aaa 1.5s reverse;
+    }
+
+    @keyframes aaa {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <input type="text" v-model="mytext">
+    <button v-on:click="handleAdd()">add</button>
+    <ul v-show="datalist.length">
+      <transition-group name="kerwin" tag="ul">
+        <li v-for='(data, index) in datalist' :key="item">
+          {{data}}
+          <button v-on:click="handleDel(index)">del</button>
+        </li>
+      </transition-group>
+    </ul>
+    <div v-show="!datalist.length">Todo list empty</div>
+  </div>
+  <script>
+    new Vue({
+      el: '#box',
+      data: {
+        datalist: ['aa', 'bb', 'cc'],
+        mytext: 'text'
+
+      },
+      methods: {
+        handleAdd() {
+          // console.log('value:', this.mytext)
+          this.datalist.push(this.mytext)
+          this.mytext = ''
+
+        },
+        handleDel(index) {
+          this.datalist.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -36,7 +36,8 @@
 <body>
   <div id="box">
     <button @click="isShow= !isShow">change</button>
-    <transition name="kerwin">
+    <!-- <transition name="kerwin" mode="in-out"> -->
+    <transition name="kerwin" mode="out-in">
       <!-- <div v-if="isShow">11111</div> -->
       <!-- <p v-else>22222</p> -->
       <div v-if="isShow" :key="1">11111</div>

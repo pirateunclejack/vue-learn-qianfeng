@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/vue2.js"></script>
+  <script src="../../lib/axios.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+
+  <style>
+    .left {}
+
+    .right {
+      position: fixed;
+      right: 0px;
+      top: 0px;
+
+    }
+
+    .right-enter-active {
+      animation: aaa 1.5s;
+    }
+
+    .right-leave-active {
+      animation: aaa 1.5s reverse;
+    }
+
+    .kerwin-enter-active {
+      animation: aaa 1.5s;
+    }
+
+    .kerwin-leave-active {
+      animation: aaa 1.5s reverse;
+    }
+
+    @keyframes aaa {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    li {
+      overflow: hidden;
+      list-style: none;
+      padding: 10px;
+    }
+
+    li img {
+      float: left;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <navbar>
+      <button @click="isShow=!isShow">click</button>
+    </navbar>
+
+    <sidebar v-show="isShow" mode="right"></sidebar>
+
+
+  </div>
+  <script>
+    Vue.component('sidebar', {
+      // get 'myname' attributes.
+      props: ['mode'],
+      template: `
+        <transition :name="mode">
+          <div style="background: yellow;" :class='mode'>
+            <ul>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+              <li>111111111</li>
+            </ul>
+          </div>
+        </transition>
+      `
+
+    })
+    Vue.component('navbar', {
+      template: `
+                <div style="background: red;">
+                  navbar- <slot>  </slot>
+                </div>
+            `,
+      methods: {
+
+      }
+    })
+
+    var vm = new Vue({
+      el: '#box',
+      data: {
+        isShow: false,
+      },
+      methods: {
+
+      }
+
+    })
+
+
+  </script>
+</body>
+
+</html>
