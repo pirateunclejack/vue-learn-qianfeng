@@ -1,0 +1,105 @@
+<!DOCTYPE html>lide 1
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.css" />
+
+  <script src="../../js/swiper.js"></script>
+  <script src="../../lib/vue2.js"></script>
+
+  <style>
+    .kerwin {
+      height: 500px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <swiper :key="datalist.length">
+      <swiper-item v-for="data in datalist" :key="data">
+        <img :src="data" alt="">
+      </swiper-item>
+    </swiper>
+  </div>
+  <script>
+    Vue.component('swiperItem', {
+      template: `
+        <div class="swiper-slide">
+          <slot></slot>
+        </div>
+      `,
+
+
+    })
+    Vue.component('swiper', {
+      template: `
+        <div class="swiper kerwin">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <slot> </slot>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      `,
+
+      mounted() {
+        console.log('mounted-swiper')
+        // console.log('mounted')
+        const swiper = new Swiper(".kerwin", {
+          // direction: 'vertical',
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
+      },
+      destroyed() {
+        console.log('destroyed')
+      },
+    })
+    new Vue({
+      el: '#box',
+      data: {
+        datalist: [],
+      },
+      mounted() {
+        setTimeout(() => {
+          this.datalist = ["https://avatars.githubusercontent.com/u/15389209?s=40&v=4",
+            "https://avatars.githubusercontent.com/u/5035925?s=40&v=4",
+            "https://avatars.githubusercontent.com/u/465125?s=40&v=4"]
+        }, 2000);
+      },
+    })
+  </script>
+</body>
+
+</html>
