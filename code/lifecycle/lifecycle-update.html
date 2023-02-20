@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/vue2.js"></script>
+  <script src="../../lib/axios.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+</head>
+
+<body>
+  <div id="box">
+    {{myname}}
+    {{globalName}}
+    <button @click="myname='xiaoming'">change</button>
+    <ul>
+      <li v-for="data in datalist" :key="data">
+        {{data}}
+      </li>
+    </ul>
+  </div>
+  <script>
+
+    var vm = new Vue({
+      data: {
+        myname: "kerwin",
+        datalist: [],
+      },
+      // template: `
+      // <div>root component -- {{myname}}</div>
+      // `,
+      beforeCreate() {
+        console.log("Before created", this.myname)
+      },
+      created() {
+        console.log("After created", this.myname)
+        this.myname = this.myname + "111111111"
+        this.globalName = 'element which this can access'
+        // this.user = localStorage.getItem('user')
+      },
+      beforeMount() {
+        console.log(document.getElementById('box'))
+        console.log(this.$el)
+      },
+      mounted() {
+        console.log(document.getElementById('box').innerHTML)
+        setTimeout(() => {
+          this.datalist = ['111', '222', '333']
+        }, 2000);
+        console.log(document.getElementsByTagName('li').length)
+      },
+      beforeUpdate() {
+        console.log('beforeupdate')
+      },
+      updated() {
+        console.log('updated')
+        console.log(document.getElementsByTagName('li').length)
+      },
+      el: '#box',
+      methods: {
+        handleAdd() {
+          console.log(this.$refs.mychild.myname)
+          this.$refs.mychild.myname = 123
+          console.log(this.$refs.mychild.myname)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
