@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../lib/vue2.js"></script>
+  <script src="../../lib/axios.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+</head>
+
+<body>
+  <div id="box">
+    <child v-if="isCreated"></child>
+  </div>
+  <script>
+    Vue.component('child', {
+      data() {
+        return {
+          time: 1000
+        }
+      },
+      created() {
+        this.id = null
+        window.onresize = () => {
+          console.log('resize')
+        }
+      },
+      mounted() {
+        this.id = setInterval(() => {
+          console.log('countdown')
+          this.time--
+        }, 1000);
+      },
+      beforeDestroy() {
+        console.log('before destroyed clean setinterval unmount')
+        clearInterval(this.id)
+        window.onresize = null
+      },
+      destroyed() {
+        console.log('destroyed clean setinterval unmount')
+      },
+
+      template: `
+        <div>
+          snap up countdown component
+          <div>{{time}}</div> 
+        </div>
+      `
+    })
+    var vm = new Vue({
+      data: {
+        isCreated: true
+      },
+
+      el: '#box',
+      methods: {
+      }
+    })
+  </script>
+</body>
+
+</html>
