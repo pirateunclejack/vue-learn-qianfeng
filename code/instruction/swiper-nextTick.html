@@ -1,0 +1,130 @@
+<!DOCTYPE html>lide 1
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/swiper.css" />
+
+  <script src="../../js/swiper.js"></script>
+  <script src="../../lib/vue2.js"></script>
+
+  <style>
+    .kerwin {
+      height: 500px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Header</header>
+  <!-- Slider main container -->
+  <div class="swiper kerwin" id="box">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="data in datalist" :key="data">
+        <img :src="data" alt="">
+      </div>
+      <!-- Slides -->
+      <!-- <div class="swiper-slide">1111111111111111</div>
+      <div class="swiper-slide">2222222222222222</div>
+      <div class="swiper-slide">3333333333333333</div>
+      ... -->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <footer>Footer</footer>
+  <script>
+    // setTimeout(() => {
+    //   var list = ['aaa', 'bbb', 'ccc']
+    //   var newlist = list.map(item => `
+    //     <div class="swiper-slide">
+    //       ${item}
+    //     </div>
+    //   `)
+    //   var owrapper = document.querySelector(".swiper-wrapper")
+    //   owrapper.innerHTML = newlist.join('')
+    //   init()
+    // }, 2000);
+    // function init() {
+    //   const swiper = new Swiper(".kerwin", {
+    //     // direction: 'vertical',
+    //     // autoplay: {box
+    //     // delay: 2500,
+    //     // disableOnInteraction: false,
+    //     // },
+    //     // If we need pagination
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //     },
+    //     // Navigation arrows
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+
+    //     // And if we need scrollbar
+    //     scrollbar: {
+    //       el: '.swiper-scrollbar',
+    //     },
+    //   })
+
+    // }
+    new Vue({
+      el: '#box',
+      data: {
+        datalist: []
+      },
+      mounted() {
+        setTimeout(() => {
+          this.datalist = ["https://avatars.githubusercontent.com/u/15389209?s=40&v=4",
+            "https://avatars.githubusercontent.com/u/5035925?s=40&v=4",
+            "https://avatars.githubusercontent.com/u/465125?s=40&v=4"]
+
+          this.$nextTick(() => {
+            console.log('Act later than updated and only once')
+            const swiper = new Swiper(".kerwin", {
+              // direction: 'vertical',
+              // autoplay: {
+              // delay: 2500,
+              // disableOnInteraction: false,
+              // },
+              // If we need pagination
+              pagination: {
+                el: '.swiper-pagination',
+              },
+              // Navigation arrows
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+
+              // And if we need scrollbar
+              scrollbar: {
+                el: '.swiper-scrollbar',
+              },
+            })
+          })
+        }, 2000);
+
+      },
+
+      updated() {
+        console.log('udpated')
+      },
+    })
+  </script>
+</body>
+
+</html>
