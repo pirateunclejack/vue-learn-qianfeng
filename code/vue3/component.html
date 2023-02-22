@@ -30,7 +30,28 @@
       },
       computed: {
 
-      }
+      },
+      created() {
+        console.log('created')
+      },
+      mounted() {
+        console.log('mounted')
+      },
+      beforeMount() {
+        console.log('beforeMount')
+      },
+      beforeUnmount() {
+        console.log('beforeUnmount')
+      },
+      unmounted() {
+        console.log('unmounted')
+      },
+      // beforeDestroy() {
+      // console.log('beforeDestroy')
+      // },
+      // destroyed() {
+      // console.log('destroyed')
+      // },
     }
     var app = Vue.createApp(obj)
     app.component('navbar', {
