@@ -11,20 +11,29 @@
       {{ data }}
     </li>
     </ul>
-    <NavBar></NavBar>
+    <navbar myname="home" :myright="false" @event="handleEvent">
+      <div>slotttttttttttttttt</div>
+    </navbar>
+    <sidebar v-show="isShow"></sidebar>
   </div>
 </template>
 
 <script>
 import navbar from './components/NavBar.vue'
+import sidebar from './components/SideBar.vue'
 // import Vue from 'vue'
 // Vue.component('NavBar', navbar)
 export default {
+  components: {
+    navbar,
+    sidebar
+  },
   data () {
     return {
       myname: 'kerwin',
       mytext: '12321',
-      datalist: []
+      datalist: [],
+      isShow: true
     }
   },
   computed: {
@@ -37,15 +46,15 @@ export default {
     handleAdd () {
       console.log(this.mytext)
       this.datalist.push(this.mytext)
+    },
+    handleEvent () {
+      this.isShow = !this.isShow
     }
-  },
-  component: {
-    navbar
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   $width: 300px;
   ul{
     li{
