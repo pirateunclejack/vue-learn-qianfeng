@@ -19,6 +19,9 @@ export default {
       default: true
     }
   },
+  mounted () {
+    console.log('mounted')
+  },
   methods: {
     handleLeft () {
       this.$emit('event')

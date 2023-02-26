@@ -4,6 +4,7 @@
     <br>
     {{ myname }}
     <br>
+    <img src="/docker.png" alt="">
     <input v-model="mytext" type="text">
     <button @click="handleAdd">add</button>
     <ul>
