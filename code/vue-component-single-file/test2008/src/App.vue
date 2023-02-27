@@ -22,8 +22,10 @@
 </template>
 
 <script>
-import navbar from './components/NavBar.vue'
-import sidebar from './components/SideBar.vue'
+// @ is equal to `realpath src`
+import navbar from '@/components/NavBar.vue'
+import sidebar from '@/components/SideBar.vue'
+import axios from 'axios'
 import Vue from 'vue'
 // Vue.component('NavBar', navbar)
 Vue.directive('hello', {
@@ -55,6 +57,11 @@ export default {
   watch: {
 
   },
+  mounted () {
+    axios.get('/kerwin/api/mmdb/movie/v3/list/hot.json?ct=北京&ci=1&channelId=4').then(res => {
+      console.log(res.data)
+    })
+  },
   methods: {
     handleAdd () {
       console.log(this.mytext)
@@ -64,6 +71,7 @@ export default {
       this.isShow = !this.isShow
     }
   }
+
 }
 </script>
 
