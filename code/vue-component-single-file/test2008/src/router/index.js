@@ -1,28 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import MaizuoFilms from '@/views/MaizuoFilms.vue'
+import MaizuoCenter from '@/views/MaizuoCenter.vue'
+import MaizuoCinemas from '@/views/MaizuoCinemas.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/films',
+    name: 'films',
+    component: MaizuoFilms
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/center',
+    name: 'center',
+    component: MaizuoCenter
+  },
+  {
+    path: '/cinemas',
+    name: 'cinemas',
+    component: MaizuoCinemas
+  },
+  {
+    path: '/*',
+    redirect: '/films'
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 
