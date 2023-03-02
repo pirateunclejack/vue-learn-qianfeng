@@ -2,11 +2,6 @@
   <div>
     <ul>
       <!-- vue-router declarative route -->
-
-      <router-link v-for="tab in datalist" v-slot="{navigate, isActive}" :key = "tab" :to="tab" custom>
-        <li :class="isActive?'kerwinactive':''" @click="navigate">{{ tab }} -- {{ isActive }}</li>
-      </router-link>
-
       <hr>
         <!-- <a href="/#/films">films</a> <br> -->
         <router-link v-slot="{navigate, isActive}" to="/films" custom>

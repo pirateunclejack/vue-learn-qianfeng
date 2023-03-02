@@ -4,6 +4,7 @@ import MaizuoFilms from '@/views/MaizuoFilms.vue'
 import MaizuoCenter from '@/views/MaizuoCenter.vue'
 import MaizuoCinemas from '@/views/MaizuoCinemas.vue'
 import MaizuoSearch from '@/views/MaizuoSearch.vue'
+import MaizuoDetail from '@/views/MaizuoDetail.vue'
 import MaizuoNowplaying from '@/views/films/MaizuoNowplaying.vue'
 import MaizuoComingsoon from '@/views/films/MaizuoComingsoon.vue'
 
@@ -34,7 +35,10 @@ const routes = [
 
     ]
   },
-
+  {
+    path: '/detail',
+    component: MaizuoDetail
+  },
   {
     path: '/center',
     name: 'center',
