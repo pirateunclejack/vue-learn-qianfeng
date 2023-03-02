@@ -10,10 +10,3 @@ new Vue({
   // store,
   render: h => h(App)
 }).$mount('#app')
-
-const obj = {
-  name: 'jifjei',
-  change: 'jifejiwjief'
-}
-
-console.log(obj)
