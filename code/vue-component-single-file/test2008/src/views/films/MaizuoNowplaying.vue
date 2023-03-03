@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data () {
     return {
@@ -20,7 +21,13 @@ export default {
       console.log(id)
       // programmatic route
       // location.href = '#/detail'
-      this.$router.push(`/detail/${id}`)
+      // this.$router.push(`/detail/${id}`)
+      this.$router.push({
+        name: 'kerwinDetail',
+        params: {
+          id
+        }
+      })
     }
   }
 }
