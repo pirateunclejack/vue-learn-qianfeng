@@ -2,7 +2,7 @@
   <div>
     nowplaying
     <ul>
-      <li v-for="data in datalist" :key="data" @click="handleChangePage">
+      <li v-for="data in datalist" :key="data" @click="handleChangePage(data)">
         {{ data }}
       </li>
     </ul>
@@ -16,10 +16,11 @@ export default {
     }
   },
   methods: {
-    handleChangePage () {
+    handleChangePage (id) {
+      console.log(id)
       // programmatic route
       // location.href = '#/detail'
-      this.$router.push('/detail')
+      this.$router.push(`/detail/${id}`)
     }
   }
 }

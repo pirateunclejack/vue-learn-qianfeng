@@ -40,6 +40,10 @@ const routes = [
     component: MaizuoDetail
   },
   {
+    path: '/detail/:id',
+    component: MaizuoDetail
+  },
+  {
     path: '/center',
     name: 'center',
     component: MaizuoCenter
