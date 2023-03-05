@@ -7,6 +7,8 @@ import MaizuoSearch from '@/views/MaizuoSearch.vue'
 import MaizuoDetail from '@/views/MaizuoDetail.vue'
 import MaizuoNowplaying from '@/views/films/MaizuoNowplaying.vue'
 import MaizuoComingsoon from '@/views/films/MaizuoComingsoon.vue'
+import MaizuoOrder from '@/views/MaizuoOrder.vue'
+import MaizuoLogin from '@/views/MaizuoLogin.vue'
 
 Vue.use(VueRouter)
 
@@ -47,7 +49,25 @@ const routes = [
   {
     path: '/center',
     name: 'center',
-    component: MaizuoCenter
+    component: MaizuoCenter,
+    meta: {
+      isKerwinRequired: true
+    }
+    // beforeEnter: (to, from, next) => {
+    //   if (localStorage.getItem('token')) {
+    //     next()
+    //   } else {
+    //     next('/login')
+    //   }
+    // }
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: MaizuoOrder,
+    meta: {
+      isKerwinRequired: true
+    }
   },
   {
     path: '/cinemas',
@@ -59,6 +79,10 @@ const routes = [
     component: MaizuoSearch
   },
   {
+    path: '/login',
+    component: MaizuoLogin
+  },
+  {
     path: '/*',
     redirect: '/films'
   }
@@ -66,7 +90,30 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode: 'history'
+  mode: 'hash'
 })
+
+// global intercept
+// router.beforeEach((to, from, next) => {
+//   // console.log(to.fullPath)
+//   console.log(to)
+//   // if (to.fullPath === '/center') {
+//   if (to.meta.isKerwinRequired) {
+//     // If token is in localstorage
+//     if (localStorage.getItem('token')) {
+//       next()
+//     } else {
+//       // next('/login')
+//       next({
+//         path: 'login',
+//         query: {
+//           redirect: to.fullPath
+//         }
+//       })
+//     }
+//   } else {
+//     next()
+//   }
+// })
 
 export default router
