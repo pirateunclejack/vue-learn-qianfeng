@@ -1,32 +1,17 @@
 <template>
   <div>
-    <ul>
-      <!-- vue-router declarative route -->
-      <hr>
-        <!-- <a href="/#/films">films</a> <br> -->
-        <router-link v-slot="{navigate, isActive}" to="/films" custom>
-          <li :class="isActive?'kerwinactive':''" @click="navigate">films -- {{ isActive }}</li>
-        </router-link>
-
-        <!-- <a href="/#/cinemas">cinemas</a> <br> -->
-        <router-link v-slot="{navigate, isActive}" to="/cinemas" custom>
-          <li :class="isActive?'kerwinactive':''" @click="navigate">cinemas -- {{ isActive }}</li>
-        </router-link>
-
-        <!-- <a href="/#/center">center</a> <br> -->
-        <router-link v-slot="{navigate, isActive}" to="/center" custom>
-          <li :class="isActive?'kerwinactive':''" @click="navigate">center -- {{ isActive }}</li>
-        </router-link>
-
-    </ul>
-
+    <tabbar></tabbar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import tabbar from '@/components/MaizuoTabbar.vue'
 
 export default {
+  components: {
+    tabbar
+  },
   data () {
     return {
       datalist: [
@@ -46,7 +31,10 @@ export default {
   padding: 0%;
   margin: 0%;
 }
-.kerwinactive {
-  color: red;
+html,body {
+  height: 100%;
+}
+ul {
+  list-style: none;
 }
 </style>

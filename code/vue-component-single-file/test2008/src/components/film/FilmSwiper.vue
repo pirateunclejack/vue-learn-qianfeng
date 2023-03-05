@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-container kerwin">
+  <div class="swiper-container swiper">
     <div class="swiper-wrapper">
       <slot></slot>
     </div>
@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted () {
-    const swiper = new Swiper('.kerwin', {
+    const swiper = new Swiper('.swiper', {
       pagination: {
         el: '.swiper-pagination'
       },

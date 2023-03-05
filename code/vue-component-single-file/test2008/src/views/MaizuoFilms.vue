@@ -33,9 +33,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .filmswiperitem{
     img {
+      // height: 23.4375rem;
       width: 100%;
     }
   }
