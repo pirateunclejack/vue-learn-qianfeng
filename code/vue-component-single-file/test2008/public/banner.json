@@ -1,0 +1,19 @@
+{
+  "banner":[
+    {
+      "id": 1,
+      "imgUrl": "https://em-content.zobj.net/thumbs/120/apple/325/smiling-face-with-smiling-eyes_1f60a.png",
+      "title": "pic1"
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://em-content.zobj.net/thumbs/120/google/350/smiling-face-with-smiling-eyes_1f60a.png",
+      "title": "pic2"
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://em-content.zobj.net/thumbs/120/samsung/349/smiling-face-with-smiling-eyes_1f60a.png",
+      "title": "pic3"
+    }
+  ]
+}

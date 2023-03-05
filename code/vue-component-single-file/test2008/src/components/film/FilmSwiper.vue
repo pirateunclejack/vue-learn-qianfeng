@@ -1,0 +1,37 @@
+<template>
+  <div class="swiper-container kerwin">
+    <div class="swiper-wrapper">
+      <slot></slot>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</template>
+
+<script>
+// import SwiperCore, { Navigation, Pagination } from 'swiper/core'
+// SwiperCore.use([Navigation, Pagination])
+import Swiper from 'swiper/bundle'
+import 'swiper/css/bundle'
+// import 'swiper/css-bundle'
+export default {
+  props: {
+    loop: {
+      type: Boolean,
+      default: true
+    }
+  },
+  mounted () {
+    const swiper = new Swiper('.kerwin', {
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      loop: this.loop,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      }
+    })
+    console.log(swiper)
+  }
+}
+</script>

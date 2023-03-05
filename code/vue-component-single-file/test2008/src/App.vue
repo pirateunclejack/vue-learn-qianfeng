@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="box">
-      123456789101112
-    </div>
     <ul>
       <!-- vue-router declarative route -->
       <hr>
@@ -49,15 +46,7 @@ export default {
   padding: 0%;
   margin: 0%;
 }
-body {
-  font-size: 16px;
-}
 .kerwinactive {
   color: red;
-}
-.box {
-  width: 23.4375rem;
-  height: 12.5rem;
-  background-color: yellow;
 }
 </style>
