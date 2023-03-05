@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MaizuoFilms from '@/views/MaizuoFilms.vue'
-import MaizuoCenter from '@/views/MaizuoCenter.vue'
+// import MaizuoCenter from '@/views/MaizuoCenter.vue'
 import MaizuoCinemas from '@/views/MaizuoCinemas.vue'
 import MaizuoSearch from '@/views/MaizuoSearch.vue'
 import MaizuoDetail from '@/views/MaizuoDetail.vue'
 import MaizuoNowplaying from '@/views/films/MaizuoNowplaying.vue'
 import MaizuoComingsoon from '@/views/films/MaizuoComingsoon.vue'
-import MaizuoOrder from '@/views/MaizuoOrder.vue'
+// import MaizuoOrder from '@/views/MaizuoOrder.vue'
 import MaizuoLogin from '@/views/MaizuoLogin.vue'
 
 Vue.use(VueRouter)
@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/center',
     name: 'center',
-    component: MaizuoCenter,
+    component: () => import('@/views/MaizuoCenter'), // lazy import
     meta: {
       isKerwinRequired: true
     }
@@ -64,7 +64,7 @@ const routes = [
   {
     path: '/order',
     name: 'order',
-    component: MaizuoOrder,
+    component: () => import('@/views/MaizuoOrder'), // lazy import
     meta: {
       isKerwinRequired: true
     }
