@@ -5,7 +5,7 @@
         <img :src="data.imgUrl" alt="">
       </film-swiper-item>
     </film-swiper>
-    films
+    <film-header></film-header>
     <router-view></router-view>
   </div>
 </template>
@@ -13,11 +13,13 @@
 <script>
 import filmSwiper from '@/components/film/FilmSwiper.vue'
 import filmSwiperItem from '@/components/film/FilmSwiperItem.vue'
+import filmHeader from '@/components/film/FilmHeader.vue'
 import axios from 'axios'
 export default {
   components: {
     filmSwiper,
-    filmSwiperItem
+    filmSwiperItem,
+    filmHeader
   },
   data () {
     return {

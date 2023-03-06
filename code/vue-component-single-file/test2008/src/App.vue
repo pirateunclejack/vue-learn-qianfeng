@@ -1,7 +1,7 @@
 <template>
   <div>
     <tabbar></tabbar>
-    <router-view></router-view>
+    <section><router-view></router-view></section>
   </div>
 </template>
 
@@ -25,8 +25,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
 * {
   padding: 0%;
   margin: 0%;
@@ -36,5 +35,8 @@ html,body {
 }
 ul {
   list-style: none;
+}
+section {
+  padding-bottom: 3rem;
 }
 </style>

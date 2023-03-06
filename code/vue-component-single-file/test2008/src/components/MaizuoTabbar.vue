@@ -47,10 +47,10 @@ footer{
       display: flex;
       flex-direction: column;
       i {
-        font-size: 20px;
+        font-size: 1.25rem;
       }
       span {
-        font-size: 16px;
+        font-size: 1rem;
       }
     }
   }
