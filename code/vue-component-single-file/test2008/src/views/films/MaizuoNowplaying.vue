@@ -16,8 +16,9 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import Vue from 'vue'
+import http from '@/util/http'
 Vue.filter('actorsFilter', (data) => {
   if (data === undefined) return 'No actors'
   return data.map(item => item.name).join()
@@ -32,11 +33,10 @@ export default {
     // axios.get('https://www.mei.com/api/pc/get_banner').then(res => {
     // console.log(res.data)
     // })
-    axios(
+    http(
       {
-        url: 'https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=6116752',
+        url: '/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=6116752',
         headers: {
-          'X-client-info': '{"a":"3000","ch":"1002","v":"5.2.1","e":"1670094337119816702656513","bc":"110100"}',
           'X-Host': 'mall.film-ticket.film.list'
         }
       }
