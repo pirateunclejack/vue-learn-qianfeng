@@ -1,11 +1,21 @@
 <template>
+
   <div>
-    detail
+    <film-detail :film-info="filmInfo"></film-detail>
   </div>
 </template>
 <script>
 import http from '@/util/http'
+import filmDetail from '@/components/film/FilmDetail.vue'
 export default {
+  components: {
+    filmDetail
+  },
+  data () {
+    return {
+      filmInfo: null
+    }
+  },
   created () {
     console.log('created', this.$route.params.id)
     // axios
@@ -16,6 +26,7 @@ export default {
       }
     }).then(res => {
       console.log(res.data.data.film)
+      this.filmInfo = res.data.data.film
     })
   }
 }
