@@ -1,8 +1,7 @@
 <template>
   <div>
-    nowplaying
     <ul>
-      <li v-for="data in datalist" :key="data.filmId" @click="handleChangePage(data)">
+      <li v-for="data in datalist" :key="data.filmId" @click="handleChangePage(data.filmId)">
         <img :src="data.poster" alt="">
         <div>
           <div class="title">{{ data.name }}</div>

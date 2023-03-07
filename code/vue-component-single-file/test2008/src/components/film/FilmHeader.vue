@@ -20,7 +20,7 @@
 }
 ul {
   display: flex;
-  height: 2rem;
+  height: 2.5rem;
   line-height: 2rem;
   li {
     flex: 1;

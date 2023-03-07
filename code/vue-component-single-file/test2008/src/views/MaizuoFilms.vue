@@ -5,7 +5,7 @@
         <img :src="data.imgUrl" alt="">
       </film-swiper-item>
     </film-swiper>
-    <film-header></film-header>
+    <film-header class="sticky"></film-header>
     <router-view></router-view>
   </div>
 </template>
@@ -41,5 +41,10 @@ export default {
       // height: 23.4375rem;
       width: 100%;
     }
+  }
+  .sticky {
+    position: sticky;
+    top: 0px;
+    background-color: white;
   }
 </style>
