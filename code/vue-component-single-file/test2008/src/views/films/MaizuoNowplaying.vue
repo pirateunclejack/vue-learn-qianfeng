@@ -65,6 +65,7 @@ export default {
 
 <style lang="scss" scoped>
   ul {
+    padding: 0%;
     li {
       padding: 1rem;
       overflow: hidden;

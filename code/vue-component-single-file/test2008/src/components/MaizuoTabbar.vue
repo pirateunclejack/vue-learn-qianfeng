@@ -30,7 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 footer{
-  position:fixed;
+  z-index: 2;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -55,7 +56,7 @@ footer{
     }
   }
   .kerwinactive{
-  color: red
+    color: red
   }
 }
 </style>
