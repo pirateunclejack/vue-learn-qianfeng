@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <ul>
       <li v-for="data in cinemaList" :key="data.cinemaId">
         <div class="left">
@@ -15,6 +15,7 @@
 </template>
 <script>
 import http from '@/util/http'
+import BScroll from '@better-scroll/core'
 export default {
   data () {
     return {
@@ -28,11 +29,24 @@ export default {
     }).then(res => {
       // console.log(res.data.data.cinemas)
       this.cinemaList = res.data.data.cinemas
+      this.$nextTick(() => {
+        const bs = new BScroll('.box', {
+          scrollBar: {
+            fade: false
+          }
+        })
+        bs()
+      })
     })
   }
 }
 </script>
 <style lang="scss" scoped>
+.box {
+  height: calc(100% - 3rem );
+  overflow: hidden;
+  position: relative;
+}
   div{
     ul {
       padding: 0%;
