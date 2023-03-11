@@ -1,7 +1,9 @@
 <template>
   <div>
     <tabbar></tabbar>
-    <section><router-view></router-view></section>
+    <section>
+      <router-view></router-view>
+    </section>
   </div>
 </template>
 

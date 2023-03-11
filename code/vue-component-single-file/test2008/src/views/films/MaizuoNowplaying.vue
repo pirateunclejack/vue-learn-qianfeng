@@ -1,9 +1,15 @@
 <template>
   <div>
-    <ul>
-      <li v-for="data in datalist" :key="data.filmId" @click="handleChangePage(data.filmId)">
+    <van-list
+      v-model="loading"
+      :finished="finished"
+      finished-text="Finished"
+      :immediate-check="false"
+      @load="onLoad"
+    >
+      <van-cell v-for="data in datalist" :key="data.filmId" @click="handleChangePage(data.filmId)">
         <img :src="data.poster" alt="">
-        <div>
+        <div class="container">
           <div class="title">{{ data.name }}</div>
           <div class="content">
             <div :class="data.grade?'':'hidden'">Score: <span style="color:red">{{ data.grade }}</span></div>
@@ -11,14 +17,21 @@
             <div>{{ data.nation }} | {{ data.runtime }} minutes</div>
           </div>
         </div>
-      </li>
-    </ul>
+      </van-cell>
+    </van-list>
   </div>
 </template>
+
 <script>
 // import axios from 'axios'
 import Vue from 'vue'
 import http from '@/util/http'
+
+import { List } from 'vant'
+
+Vue.use(List)
+
+// with options
 Vue.filter('actorsFilter', (data) => {
   if (data === undefined) return 'No actors'
   return data.map(item => item.name).join()
@@ -26,7 +39,10 @@ Vue.filter('actorsFilter', (data) => {
 export default {
   data () {
     return {
-      datalist: []
+      datalist: [],
+      loading: false,
+      finished: false,
+      current: 1
     }
   },
   mounted () {
@@ -46,6 +62,26 @@ export default {
     })
   },
   methods: {
+    onLoad () {
+      console.log('end')
+      this.current++
+      http(
+        {
+          url: `/gateway?cityId=110100&pageNum=${this.current}&pageSize=10&type=1&k=6116752`,
+          headers: {
+            'X-Host': 'mall.film-ticket.film.list'
+          }
+        }
+      ).then(res => {
+        console.log(res.data.data.films)
+        console.log(res.data.data)
+        this.datalist = [...this.datalist, ...res.data.data.films]
+        this.loading = false
+        if (this.datalist.length === res.data.data.total !== 0) {
+          this.finished = true
+        }
+      })
+    },
     handleChangePage (id) {
       console.log(id)
       // programmatic route
@@ -64,27 +100,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  ul {
+  .van-list {
     padding: 0%;
-    li {
+    .van-cell {
       padding: 1rem;
       overflow: hidden;
       img {
         width: 4.125rem;
         float: left;
       }
-      .title {
+      .container{
+        padding-left: 5rem;
+        padding-right: .625rem;
+        .title {
         font-size: 1rem;
-      }
-      .content{
-        font-size: .75rem;
-        color: gray;
-        .actors {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+        }
+        .content{
+          font-size: .75rem;
+          color: gray;
+          .actors {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
       }
+
     }
   }
   .hidden {
