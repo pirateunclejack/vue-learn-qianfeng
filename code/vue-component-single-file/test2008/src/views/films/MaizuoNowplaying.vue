@@ -112,6 +112,7 @@ export default {
       .container{
         padding-left: 5rem;
         padding-right: .625rem;
+        line-height: 1.5rem;
         .title {
         font-size: 1rem;
         }

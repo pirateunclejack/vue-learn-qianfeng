@@ -7,6 +7,11 @@
 <script>
 import http from '@/util/http'
 import filmDetail from '@/components/film/FilmDetail.vue'
+// import Vue from 'vue'
+// import { Toast } from 'vant'
+//
+// Vue.use(Toast)
+
 export default {
   components: {
     filmDetail
@@ -27,7 +32,15 @@ export default {
     }).then(res => {
       console.log(res.data.data.film)
       this.filmInfo = res.data.data.film
+      // Toast.clear()
     })
   }
+  // },
+  // mounted () {
+  // Toast.loading({
+  // message: 'Loading...',
+  // forbidClick: true
+  // })
+  // }
 }
 </script>
