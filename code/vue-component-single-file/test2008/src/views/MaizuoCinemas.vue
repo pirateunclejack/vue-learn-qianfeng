@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar">
-      <van-nav-bar ref="navbar" title="Cinemas">
+      <van-nav-bar ref="navbar" title="Cinemas" @click-left="handleLeft">
         <template #right>
           <van-icon name="search" size="24" color="black"/>
         </template>
@@ -53,6 +53,12 @@ export default {
         console.log(bs)
       })
     })
+  },
+  methods: {
+    handleLeft () {
+      // console.log('left')
+      this.$router.push('/city')
+    }
   }
 }
 </script>

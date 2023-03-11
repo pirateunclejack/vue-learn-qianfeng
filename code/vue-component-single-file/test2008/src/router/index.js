@@ -9,6 +9,7 @@ import MaizuoNowplaying from '@/views/films/MaizuoNowplaying.vue'
 import MaizuoComingsoon from '@/views/films/MaizuoComingsoon.vue'
 // import MaizuoOrder from '@/views/MaizuoOrder.vue'
 import MaizuoLogin from '@/views/MaizuoLogin.vue'
+import MaizuoCity from '@/views/MaizuoCity.vue'
 
 Vue.use(VueRouter)
 
@@ -83,6 +84,11 @@ const routes = [
     component: MaizuoLogin
   },
   {
+    path: '/city',
+    component: MaizuoCity,
+    name: 'city'
+  },
+  {
     path: '/*',
     redirect: '/films'
   }
@@ -90,7 +96,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode: 'hash'
+  mode: 'history'
 })
 
 // global intercept
