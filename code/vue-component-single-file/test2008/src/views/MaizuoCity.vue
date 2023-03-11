@@ -1,9 +1,9 @@
 <template>
   <div>
-    <van-index-bar :index-list="computedList">
+    <van-index-bar :index-list="computedList" @change="handleChange">
       <div v-for="data in cityList" :key="data.start" >
         <van-index-anchor :index="data.start"/>
-          <van-cell v-for="item in data.list" :key="item.cityId" :title="item.name" />
+          <van-cell v-for="item in data.list" :key="item.cityId" :title="item.name" @click="handleCity(item)"/>
       </div>
     </van-index-bar>
   </div>
@@ -11,6 +11,10 @@
 
 <script>
 import http from '@/util/http'
+import Vue from 'vue'
+import { Toast } from 'vant'
+
+Vue.use(Toast)
 export default {
   data () {
     return {
@@ -19,9 +23,8 @@ export default {
   },
   computed: {
     computedList () {
-      console.log(this.cityList.map(item => item.start))
+      // console.log(this.cityList.map(item => item.start))
       return this.cityList.map(item => item.start)
-      // return ['1', '2']
     }
   },
   mounted () {
@@ -36,6 +39,25 @@ export default {
     })
   },
   methods: {
+    handleCity (data) {
+      // traditional
+      // 1. location.href
+      // 2. cookie, localstorage
+      // location.href = '/cinemas?cityId=' + data.cityId
+
+      // fashion
+      // 1. middleman
+      // 2. event bus
+
+      // vuex - status management
+      console.log(data.name, data.cityId)
+    },
+    handleChange (data) {
+      Toast({
+        position: 'bottom',
+        message: data
+      })
+    },
     renderCity (list) {
       const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
       const cityList = []
