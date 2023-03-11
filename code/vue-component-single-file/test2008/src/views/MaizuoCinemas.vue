@@ -1,16 +1,29 @@
 <template>
-  <div class="box">
-    <ul>
-      <li v-for="data in cinemaList" :key="data.cinemaId">
-        <div class="left">
-          <div class="cinema-name">{{ data.name }}</div>
-          <div class="cinema-address">{{ data.address }}</div>
-        </div>
-        <div class="right">
-          <div class="cinema-lowPrice">￥{{ data.lowPrice/100 }} start</div>
-        </div>
-      </li>
-    </ul>
+  <div>
+    <div class="navbar">
+      <van-nav-bar ref="navbar" title="Cinemas">
+        <template #right>
+          <van-icon name="search" size="24" color="black"/>
+        </template>
+        <template #left>
+          City
+          <van-icon name="arrow-down" size="24" color="black"/>
+        </template>
+      </van-nav-bar>
+    </div>
+    <div class="box" :style="{height:height}">
+      <ul>
+        <li v-for="data in cinemaList" :key="data.cinemaId">
+          <div class="left">
+            <div class="cinema-name">{{ data.name }}</div>
+            <div class="cinema-address">{{ data.address }}</div>
+          </div>
+          <div class="right">
+            <div class="cinema-lowPrice">￥{{ data.lowPrice/100 }} start</div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -19,10 +32,12 @@ import BScroll from '@better-scroll/core'
 export default {
   data () {
     return {
-      cinemaList: []
+      cinemaList: [],
+      height: '0px'
     }
   },
   mounted () {
+    this.height = document.documentElement.clientHeight - this.$refs.navbar.$el.offsetHeight - document.querySelector('footer').offsetHeight + 'px'
     http({
       url: 'https://m.maizuo.com/gateway?cityId=110100&ticketFlag=1&k=7963848',
       headers: 'X-Host: mall.film-ticket.cinema.list'
@@ -35,7 +50,7 @@ export default {
             fade: false
           }
         })
-        bs()
+        console.log(bs)
       })
     })
   }
@@ -43,7 +58,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .box {
-  height: calc(100% - 3rem );
   overflow: hidden;
   position: relative;
 }

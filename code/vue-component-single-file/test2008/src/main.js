@@ -1,6 +1,6 @@
 import Vue from 'vue' // ES6 import
-// import App from './App.vue'
-import App from './PCApp.vue'
+import App from './App.vue'
+// import App from './PCApp.vue'
 import router from './router'
 // import store from './store'
 

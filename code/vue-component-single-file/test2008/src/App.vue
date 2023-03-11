@@ -6,7 +6,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import tabbar from '@/components/MaizuoTabbar.vue'
+import Vant from 'vant'
+import 'vant/lib/index.css'
+Vue.use(Vant)
 
 export default {
   components: {
