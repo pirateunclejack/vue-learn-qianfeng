@@ -11,7 +11,8 @@
         </template>
       </van-nav-bar>
     </div>
-    <div class="box" :style="{height:height}">
+    <!-- <div class="box" :style="{height:height}"> -->
+    <div class="box" >
       <ul>
         <li v-for="data in cinemaList" :key="data.cinemaId">
           <div class="left">
@@ -28,43 +29,43 @@
 </template>
 <script>
 // import http from '@/util/http'
-import BScroll from '@better-scroll/core'
+// import BScroll from '@better-scroll/core'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   data () {
     return {
       // cinemaList: [],
-      height: '0px'
+      // height: '0px'
     }
   },
   computed: {
     ...mapState(['cinemaList', 'cityId', 'cityName'])
   },
   mounted () {
-    this.height = document.documentElement.clientHeight - this.$refs.navbar.$el.offsetHeight - document.querySelector('footer').offsetHeight + 'px'
+    // this.height = document.documentElement.clientHeight - this.$refs.navbar.$el.offsetHeight - document.querySelector('footer').offsetHeight + 'px'
     if (this.cinemaList.length === 0) {
       this.getCinemaData(this.cityId).then(res => {
-        this.$nextTick(() => {
-          const bs = new BScroll('.box', {
-            scrollBar: {
-              fade: false
-            }
-          })
-          console.log(bs)
-        })
+        // this.$nextTick(() => {
+        //   const bs = new BScroll('.box', {
+        //     scrollBar: {
+        //       fade: false
+        //     }
+        //   })
+        //   console.log(bs)
+        // })
       }
 
       )
     } else {
-      this.$nextTick(() => {
-        const bs = new BScroll('.box', {
-          scrollBar: {
-            fade: false
-          }
-        })
-        console.log(bs)
-      })
+      // this.$nextTick(() => {
+      //   const bs = new BScroll('.box', {
+      //     scrollBar: {
+      //       fade: false
+      //     }
+      //   })
+      //   console.log(bs)
+      // })
     }
     // http({
     //   url: `https://m.maizuo.com/gateway?cityId=${this.$store.state.cityId}&ticketFlag=1&k=7963848`,
@@ -97,49 +98,52 @@ export default {
 <style lang="scss" scoped>
 .box {
   overflow: hidden;
-  position: relative;
-}
-  div{
-    ul {
-      padding: 0%;
-      margin: 0%;
-      li{
-        padding: .9375rem;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        border-top: .0625rem solid gray;
-        .left{
-          width: calc(100% - 4.0625rem);
-          text-align: left;
-          float: left;
-          padding-right: .9375rem;
-          overflow: hidden;
-            text-overflow: nowrap;
-            white-space: nowrap;
-          .cinema-name {
-            font-size: .9375rem;
-          }
-          .cinema-address {
-            color: #797d82;
-            font-size: .75rem;
-            margin-top: 5px;
-            overflow: hidden;
-            text-overflow: nowrap;
-            white-space: nowrap;
-          }
+  position: fixed;
+  float: left;
+  width: 100%;
+  overflow-y: scroll;
+  height: calc(100% - 5.875rem);
+  ul {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    li{
+      // width: 100%;
+      padding: .9375rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      border-top: .0625rem solid gray;
+      .left{
+        width: calc(100% - 4.0625rem);
+        text-align: left;
+        float: left;
+        padding-right: .9375rem;
+        overflow: hidden;
+        white-space: nowrap;
+        .cinema-name {
+          font-size: .9375rem;
         }
-        .right{
-          width: 4.375rem;
-          color: red;
-          text-align: center;
-          margin-right: -0.3125rem;
-          float: right;
-          .cinema-lowPrice{
-            font-size: .75rem;
-          }
+        .cinema-address {
+          color: #797d82;
+          font-size: .75rem;
+          margin-top: 5px;
+          overflow: hidden;
+          text-overflow: nowrap;
+          white-space: nowrap;
+        }
+      }
+      .right{
+        width: 4.375rem;
+        color: red;
+        text-align: center;
+        margin-right: -0.3125rem;
+        float: right;
+        .cinema-lowPrice{
+          font-size: .75rem;
         }
       }
     }
   }
+}
 </style>

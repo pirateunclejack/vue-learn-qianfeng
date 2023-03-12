@@ -9,7 +9,10 @@
   </div>
 </template>
 <script>
+import hideTabbar from '@/util/mixinObj.js'
+
 export default {
+  mixins: [hideTabbar],
   beforeRouteEnter (to, from, next) {
     if (localStorage.getItem('token')) {
       next()

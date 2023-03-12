@@ -13,9 +13,11 @@
 import http from '@/util/http'
 import Vue from 'vue'
 import { Toast } from 'vant'
-
+import hideTabbar from '@/util/mixinObj.js'
 Vue.use(Toast)
+
 export default {
+  mixins: [hideTabbar],
   data () {
     return {
       cityList: []

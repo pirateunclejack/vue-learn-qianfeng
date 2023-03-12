@@ -1,15 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import http from '@/util/http'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  plugins: [createPersistedState({
+    reducer: (state) => {
+      return {
+        cityId: state.cityId,
+        cityName: state.cityName
+      }
+    }
+  })],
+
   // public status
   state: {
     cityId: '310100',
     cityName: '上海',
-    cinemaList: []
+    cinemaList: [],
+    showTabbar: true
   },
   getters: {
   },
@@ -22,6 +33,9 @@ export default new Vuex.Store({
     },
     changeCinemaData (state, cinemas) {
       state.cinemaList = cinemas
+    },
+    showTabbar (state, data) {
+      state.showTabbar = data
     }
 
   },

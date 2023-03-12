@@ -7,6 +7,7 @@
 <script>
 import http from '@/util/http'
 import filmDetail from '@/components/film/FilmDetail.vue'
+import hideTabbar from '@/util/mixinObj'
 // import Vue from 'vue'
 // import { Toast } from 'vant'
 //
@@ -16,13 +17,14 @@ export default {
   components: {
     filmDetail
   },
+  mixins: [hideTabbar],
   data () {
     return {
       filmInfo: null
     }
   },
-  created () {
-    console.log('created', this.$route.params.id)
+  mounted () {
+    // console.log('created', this.$route.params.id)
     // axios
     http({
       url: `/gateway?filmId=${this.$route.params.id}&k=7161260`,
