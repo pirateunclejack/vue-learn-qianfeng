@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar">
-      <van-nav-bar ref="navbar" title="Cinemas" @click-left="handleLeft">
+      <van-nav-bar ref="navbar" title="Cinemas" @click-left="handleLeft" @click-right="handleRight">
         <template #right>
           <van-icon name="search" size="24" color="black"/>
         </template>
@@ -81,6 +81,9 @@ export default {
     handleLeft () {
       // console.log('left')
       this.$router.push('/city')
+    },
+    handleRight () {
+      this.$router.push('/cinemas/search')
     }
   }
 }
