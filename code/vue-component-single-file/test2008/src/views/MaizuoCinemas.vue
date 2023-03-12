@@ -6,14 +6,14 @@
           <van-icon name="search" size="24" color="black"/>
         </template>
         <template #left>
-          City
+          {{ $store.state.cityName }}
           <van-icon name="arrow-down" size="24" color="black"/>
         </template>
       </van-nav-bar>
     </div>
     <div class="box" :style="{height:height}">
       <ul>
-        <li v-for="data in cinemaList" :key="data.cinemaId">
+        <li v-for="data in $store.state.cinemaList" :key="data.cinemaId">
           <div class="left">
             <div class="cinema-name">{{ data.name }}</div>
             <div class="cinema-address">{{ data.address }}</div>
@@ -27,23 +27,31 @@
   </div>
 </template>
 <script>
-import http from '@/util/http'
+// import http from '@/util/http'
 import BScroll from '@better-scroll/core'
 export default {
   data () {
     return {
-      cinemaList: [],
+      // cinemaList: [],
       height: '0px'
     }
   },
   mounted () {
     this.height = document.documentElement.clientHeight - this.$refs.navbar.$el.offsetHeight - document.querySelector('footer').offsetHeight + 'px'
-    http({
-      url: 'https://m.maizuo.com/gateway?cityId=110100&ticketFlag=1&k=7963848',
-      headers: 'X-Host: mall.film-ticket.cinema.list'
-    }).then(res => {
-      // console.log(res.data.data.cinemas)
-      this.cinemaList = res.data.data.cinemas
+    if (this.$store.state.cinemaList.length === 0) {
+      this.$store.dispatch('getCinemaData', this.$store.state.cityId).then(res => {
+        this.$nextTick(() => {
+          const bs = new BScroll('.box', {
+            scrollBar: {
+              fade: false
+            }
+          })
+          console.log(bs)
+        })
+      }
+
+      )
+    } else {
       this.$nextTick(() => {
         const bs = new BScroll('.box', {
           scrollBar: {
@@ -52,7 +60,22 @@ export default {
         })
         console.log(bs)
       })
-    })
+    }
+    // http({
+    //   url: `https://m.maizuo.com/gateway?cityId=${this.$store.state.cityId}&ticketFlag=1&k=7963848`,
+    //   headers: 'X-Host: mall.film-ticket.cinema.list'
+    // }).then(res => {
+    //   // console.log(res.data.data.cinemas)
+    //   this.cinemaList = res.data.data.cinemas
+    //   this.$nextTick(() => {
+    //     const bs = new BScroll('.box', {
+    //       scrollBar: {
+    //         fade: false
+    //       }
+    //     })
+    //     console.log(bs)
+    //   })
+    // })
   },
   methods: {
     handleLeft () {

@@ -51,7 +51,7 @@ export default {
     // })
     http(
       {
-        url: '/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=6116752',
+        url: `/gateway?cityId=${this.$store.state.cityId}&pageNum=1&pageSize=10&type=1&k=6116752`,
         headers: {
           'X-Host': 'mall.film-ticket.film.list'
         }
@@ -63,11 +63,11 @@ export default {
   },
   methods: {
     onLoad () {
-      console.log('end')
+      // console.log('end')
       this.current++
       http(
         {
-          url: `/gateway?cityId=110100&pageNum=${this.current}&pageSize=10&type=1&k=6116752`,
+          url: `/gateway?cityId=${this.$store.state.cityId}&pageNum=${this.current}&pageSize=10&type=1&k=6116752`,
           headers: {
             'X-Host': 'mall.film-ticket.film.list'
           }

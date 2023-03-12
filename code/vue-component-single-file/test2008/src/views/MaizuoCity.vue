@@ -39,18 +39,24 @@ export default {
     })
   },
   methods: {
-    handleCity (data) {
+    handleCity (item) {
       // traditional
       // 1. location.href
       // 2. cookie, localstorage
-      // location.href = '/cinemas?cityId=' + data.cityId
+      // location.href = '/cinemas?cityId=' + item.cityId
 
       // fashion
       // 1. middleman
       // 2. event bus
 
       // vuex - status management
-      console.log(data.name, data.cityId)
+      // console.log(item.name, item.cityId)
+      // this.$store.state.cityId = item.cityId
+      // this.$store.state.cityName = item.name
+      this.$store.commit('changeCity', item)
+      this.$store.dispatch('getCinemaData', item.cityId)
+
+      this.$router.back()
     },
     handleChange (data) {
       Toast({
