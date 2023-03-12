@@ -6,14 +6,14 @@
           <van-icon name="search" size="24" color="black"/>
         </template>
         <template #left>
-          {{ $store.state.cityName }}
+          {{ cityName }}
           <van-icon name="arrow-down" size="24" color="black"/>
         </template>
       </van-nav-bar>
     </div>
     <div class="box" :style="{height:height}">
       <ul>
-        <li v-for="data in $store.state.cinemaList" :key="data.cinemaId">
+        <li v-for="data in cinemaList" :key="data.cinemaId">
           <div class="left">
             <div class="cinema-name">{{ data.name }}</div>
             <div class="cinema-address">{{ data.address }}</div>
@@ -29,6 +29,8 @@
 <script>
 // import http from '@/util/http'
 import BScroll from '@better-scroll/core'
+import { mapState, mapActions } from 'vuex'
+
 export default {
   data () {
     return {
@@ -36,10 +38,13 @@ export default {
       height: '0px'
     }
   },
+  computed: {
+    ...mapState(['cinemaList', 'cityId', 'cityName'])
+  },
   mounted () {
     this.height = document.documentElement.clientHeight - this.$refs.navbar.$el.offsetHeight - document.querySelector('footer').offsetHeight + 'px'
-    if (this.$store.state.cinemaList.length === 0) {
-      this.$store.dispatch('getCinemaData', this.$store.state.cityId).then(res => {
+    if (this.cinemaList.length === 0) {
+      this.getCinemaData(this.cityId).then(res => {
         this.$nextTick(() => {
           const bs = new BScroll('.box', {
             scrollBar: {
@@ -84,7 +89,8 @@ export default {
     },
     handleRight () {
       this.$router.push('/cinemas/search')
-    }
+    },
+    ...mapActions(['getCinemaData'])
   }
 }
 </script>
