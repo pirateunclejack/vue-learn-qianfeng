@@ -6,10 +6,15 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 export default {
-  methods: {
-    handleBack () {
-      this.$router.back()
+  setup(){
+    const router = useRouter()
+    const handleBack = ()=>{
+      router.back()
+    }
+    return{
+      handleBack
     }
   }
 }

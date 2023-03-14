@@ -7,21 +7,17 @@
 </template>
 
 <script>
-// import SwiperCore, { Navigation, Pagination } from 'swiper/core'
-// SwiperCore.use([Navigation, Pagination])
-  // import Swiper JS
-  import Swiper from 'swiper';
-  // import Swiper styles
-  import 'swiper/css';
+import Swiper from 'swiper';
+import 'swiper/css';
+
 export default {
   mounted () {
-    const swiper = new Swiper('.swiper-photo', {
+    new Swiper('.swiper-photo', {
       slidesPerView: '2.3',
       spaceBetween: 10,
       freeMode: true,
       cssMode: true
     })
-    console.log(swiper)
   }
 }
 </script>

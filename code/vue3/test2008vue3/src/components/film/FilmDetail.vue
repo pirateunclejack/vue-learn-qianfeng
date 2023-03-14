@@ -39,29 +39,28 @@
 </template>
 
 <script>
-// import Vue from 'vue'
 import moment from 'moment'
 import filmActors from '@/components/detail/FilmActors.vue'
 import filmPhotos from '@/components/detail/FilmPhotos.vue'
 import detailHeader from '@/components/detail/DetailHeader.vue'
+import {reactive, toRefs} from 'vue'
 
-// Vue.directive('scroll', {
-//   inserted (el, binding) {
-//     // console.log(el)
-//     console.log(binding.value)
-//     el.style.display = 'none'
-//     window.onscroll = () => {
-//       if ((document.documentElement.scrollTop || document.body.scrollTop) > binding.value) {
-//         el.style.display = 'block'
-//       } else {
-//         el.style.display = 'none'
-//       }
-//     }
-//   },
-//   unbind () {
-//     window.scroll = null
-//   }
-// })
+const scroll = {
+  created (el, binding) {
+    el.style.display = 'none'
+    window.onscroll = () => {
+      if ((document.documentElement.scrollTop || document.body.scrollTop) > binding.value) {
+        el.style.display = 'block'
+      } else {
+        el.style.display = 'none'
+      }
+    }
+  },
+  unmounted () {
+    window.scroll = null
+  }
+}
+
 export default {
   components: {
     filmActors,
@@ -74,35 +73,22 @@ export default {
       default: null
     }
   },
-  data () {
-    return {
-      isHidden: true,
-    }
-  },
-  methods: {
-    timeFilter(time){
+  setup () {
+    const obj = reactive({
+      isHidden : true
+    })
+
+    const timeFilter = (time)=>{
       const date = new Date(time * 1000)
       return moment(date).format('YYYY-MM-DD')
     }
+    return {
+      ...toRefs(obj),
+      timeFilter
+    }
   },
   directives: {
-    scroll: {
-      inserted (el, binding) {
-        // console.log(el)
-        console.log(binding.value)
-        el.style.display = 'none'
-        window.onscroll = () => {
-          if ((document.documentElement.scrollTop || document.body.scrollTop) > binding.value) {
-            el.style.display = 'block'
-          } else {
-            el.style.display = 'none'
-          }
-        }
-      },
-      unbind () {
-        window.scroll = null
-      }
-    }
+    scroll
   }
 }
 </script>

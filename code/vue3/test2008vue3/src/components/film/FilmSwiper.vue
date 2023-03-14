@@ -22,7 +22,7 @@ export default {
     }
   },
   mounted () {
-    const swiper = new Swiper('.swiper', {
+    new Swiper('.swiper', {
       pagination: {
         el: '.swiper-pagination'
       },
@@ -32,7 +32,6 @@ export default {
         disableOnInteraction: false
       }
     })
-    console.log(swiper)
   }
 }
 </script>

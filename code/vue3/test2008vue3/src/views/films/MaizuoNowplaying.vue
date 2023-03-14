@@ -23,83 +23,69 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import Vue from 'vue'
 import http from '@/util/http'
+import {reactive, toRefs, onMounted} from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 
-// import { List } from 'vant'
-
-// Vue.use(List)
-
-// with options
-// Vue.filter('actorsFilter', (data) => {
-//   if (data === undefined) return 'No actors'
-//   return data.map(item => item.name).join()
-// })
 export default {
-  data () {
-    return {
+  setup(){
+    const router = useRouter()
+    const store = useStore()
+    const obj = reactive({
       datalist: [],
+      current: 0,
       loading: false,
       finished: false,
-      current: 1
-    }
-  },
-  mounted () {
-    // axios.get('https://www.mei.com/api/pc/get_banner').then(res => {
-    // console.log(res.data)
-    // })
-    http(
-      {
-        url: `/gateway?cityId=${this.$store.state.cityId}&pageNum=1&pageSize=10&type=1&k=6116752`,
-        headers: {
-          'X-Host': 'mall.film-ticket.film.list'
-        }
-      }
-    ).then(res => {
-      // console.log(res.data.data.films)
-      this.datalist = res.data.data.films
     })
-  },
-  methods: {
-    actorsFilter(data){
-      if (data === undefined) return 'No actors'
-      return data.map(item => item.name).join()
-    },
-    onLoad () {
-      // console.log('end')
-      this.current++
+    onMounted(()=>{
       http(
         {
-          url: `/gateway?cityId=${this.$store.state.cityId}&pageNum=${this.current}&pageSize=10&type=1&k=6116752`,
+          url: `/gateway?cityId=${store.state.cityId}&pageNum=1&pageSize=10&type=1&k=6116752`,
           headers: {
             'X-Host': 'mall.film-ticket.film.list'
           }
         }
       ).then(res => {
-        // console.log(res.data.data.films)
-        // console.log(res.data.data)
-        this.datalist = [...this.datalist, ...res.data.data.films]
-        this.loading = false
-        if (this.datalist.length === res.data.data.total !== 0) {
-          this.finished = true
+        obj.datalist = res.data.data.films
+      })
+    })
+    const actorsFilter = (data)=>{
+      if (data === undefined) return 'No actors'
+      return data.map(item => item.name).join()
+    }
+    const onLoad =() =>{
+      obj.current++
+      http(
+        {
+          url: `/gateway?cityId=${store.state.cityId}&pageNum=${obj.current}&pageSize=10&type=1&k=6116752`,
+          headers: {
+            'X-Host': 'mall.film-ticket.film.list'
+          }
+        }
+      ).then(res => {
+        obj.datalist = [...obj.datalist, ...res.data.data.films]
+        obj.loading = false
+        if (obj.datalist.length === res.data.data.total !== 0) {
+          obj.finished = true
         }
       })
-    },
-    handleChangePage (id) {
-      // console.log(id)
-      // programmatic route
-      // location.href = '#/detail'
-      // this.$router.push(`/detail/${id}`)
-      this.$router.push({
+    }
+    const handleChangePage = (id)=> {
+      router.push({
         name: 'kerwinDetail',
         params: {
           id
         }
       })
     }
+    return {
+      ...toRefs(obj),
+      actorsFilter,
+      onLoad,
+      handleChangePage
+    }
   }
-
 }
 </script>
 
